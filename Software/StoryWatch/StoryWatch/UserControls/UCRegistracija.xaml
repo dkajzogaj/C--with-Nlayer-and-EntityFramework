@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="StoryWatch.UserControls.UCRegistracija"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StoryWatch.UserControls"
+             mc:Ignorable="d" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Lavender">
+    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Label Content="Registration" FontWeight="Bold" Margin="0,10,0,0" DockPanel.Dock="Top" Height="28" HorizontalAlignment="Center"/>
+        <Grid Margin="0,0,0,0" Height="291">
+            <TextBox Margin="36,37,36,0" TextWrapping="Wrap" VerticalAlignment="Top" x:Name="txtUsername" KeyUp="InputChanged" Width="100"/>
+            <Button IsDefault="True" x:Name="btnRegister" Content="Register me" HorizontalAlignment="Center" Margin="0,197,0,0" VerticalAlignment="Top" Width="88" Height="28" Click="Register_Click" IsEnabled="False"/>
+            <Label Content="Username:" HorizontalAlignment="Left" Margin="31,11,0,0" VerticalAlignment="Top"/>
+            <Label Content="Password:" HorizontalAlignment="Left" Margin="31,76,0,0" VerticalAlignment="Top"/>
+            <Label Content="Repeat password:" HorizontalAlignment="Left" Margin="31,125,0,0" VerticalAlignment="Top"/>
+            <PasswordBox Margin="36,151,36,0" VerticalAlignment="Top" x:Name="txtPassword1" KeyUp="InputChanged" Width="100"/>
+            <PasswordBox Margin="36,102,36,0" VerticalAlignment="Top" x:Name="txtPassword2" KeyUp="InputChanged" Width="100"/>
+            <Button IsCancel="True" x:Name="btnBack" Content="Cancel" HorizontalAlignment="Center" Margin="0,242,0,0" VerticalAlignment="Top" Width="88" Height="27" Click="ButtonBackClicked"/>
+
+        </Grid>
+    </DockPanel>
+</UserControl>

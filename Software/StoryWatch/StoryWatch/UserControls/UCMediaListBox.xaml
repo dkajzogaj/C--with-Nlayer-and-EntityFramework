@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="StoryWatch.UserControls.MediaListBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StoryWatch.UserControls"
+             mc:Ignorable="d" 
+             d:DesignWidth="260">
+    <UserControl.Resources>
+        <DataTemplate x:Key="MediaTemplate">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="{Binding Path=Title}" Background="AliceBlue"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Details" x:Name="btnDetails" Width="80" Click="btnDetails_Click" Margin="7"/>
+                    <Button Content="Update" x:Name="btnUpdate" Width="80" Click="btnUpdate_Click" Margin="7"/>
+                    <Button Content="Delete" x:Name="btnDelete" Width="80" Click="btnDelete_Click" Margin="7"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <StackPanel Margin="25,0,25,25">
+        <DockPanel x:Name="header" MaxWidth="410">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" x:Name="lblTitle" Content="List title" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="btnAdd" Click="btnAdd_Click" Content="+ Add " Height="30" Margin="10" FontWeight="Bold"></Button>
+                    <Button x:Name="btnUpdateList" Click="btnUpdateList_Click" Content=" Update " Height="30" Margin="10" FontWeight="Bold"></Button>
+                    <Button x:Name="btnDeleteList" Click="btnDeleteList_Click" Height="30" Margin="10" FontWeight="Bold">
+                        <Image Source="../Images/img_delete.png"></Image>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </DockPanel>
+        <ListBox x:Name="lbMedia" MinHeight="180" MaxWidth="410"
+            Background="AliceBlue"
+            IsSynchronizedWithCurrentItem="True"
+            ItemsSource="{Binding}"
+            ItemTemplate="{StaticResource MediaTemplate}"
+                 
+            PreviewMouseLeftButtonDown="List_PreviewMouseLeftButtonDown" 
+            PreviewMouseMove="List_MouseMove"
+            
+            Drop="DropList_Drop" 
+            DragEnter="DropList_DragEnter" 
+            AllowDrop="True">
+
+        </ListBox>
+    </StackPanel>
+</UserControl>

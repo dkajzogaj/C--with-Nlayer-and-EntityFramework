@@ -1,5 +1,7 @@
 # C--with-Nlayer-and-EntityFramework
-Project made in C# for college. This project was part of github but it was made with github associated to my college so it doesn't have any issues or branches.
+Project made in C# for college. This project was part of github but it was made with github associated to my college so it doesn't have any issues or branches.  
+
+https://github.com/foivz/rpp22-hluksic20-dkajzogaj20-nmidzic20.git
 
 # Inicijalne upute za prijavu projekta iz Razvoja programskih proizvoda
 

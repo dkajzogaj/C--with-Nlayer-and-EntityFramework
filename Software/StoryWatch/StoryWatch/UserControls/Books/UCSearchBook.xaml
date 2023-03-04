@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="StoryWatch.UserControls.Books.UCAddBook"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StoryWatch.UserControls.Books"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="Lavender">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <TextBox HorizontalAlignment="Left" x:Name="txtSearchKeyword" TextChanged="txtSearch_TextChanged" Width="200" Height="25" Margin="20" Text="Search books by keyword" FontWeight="Bold" FontStyle="Italic" Foreground="Gray" GotFocus="txtSearch_GotFocus" LostFocus="txtSearch_LostFocus"></TextBox>
+            <Button IsDefault="True" HorizontalAlignment="Left" x:Name="btnSearch" Click="btnSearch_Click" Content="Search"  Width="60" Height="25" FontWeight="Bold"></Button>
+            <Button x:Name="btnAddBookManually" Click="btnAddBookManually_Click" Content="Add book manually"  Width="140" Height="25" Margin="20" FontWeight="Bold"></Button>
+            <Button IsCancel="True" HorizontalAlignment="Right" x:Name="btnBooksHome" Click="btnBooksHome_Click" Content="Back"  Width="90" Height="25" Margin="20" FontWeight="Bold"></Button>
+        </DockPanel>
+        <ScrollViewer>
+            <ListBox x:Name="lbResults" Background="Lavender" SelectionChanged="lbResults_SelectionChangedAsync">
+            </ListBox>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>
